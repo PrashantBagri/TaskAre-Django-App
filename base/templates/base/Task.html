@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TASK</title>
+</head>
+<body class="">
+
+    {% include 'base/navbar.html' %}
+
+    <div class="m-10">
+
+        <h1 class="text-6xl font-serif">{{task.title}}</h1>
+        <p class="my-10">{{task.description}}</p>
+    
+        <h3 class="font-md text-3xl">Do it By {{task.targetDate}}</h3>
+        <div class="my-10">
+            <a href="{% url 'edit-task' task.id %}" class="bg-black text-white px-10 py-3 rounded-full">Edit Task</a>
+        </div>
+        <div class="my-10">
+            <a href="{% url 'deletion' task.id %}" class="bg-black text-white px-10 py-3 rounded-full">Delete Task</a>
+        </div>
+    </div>
+</body>
+</html>

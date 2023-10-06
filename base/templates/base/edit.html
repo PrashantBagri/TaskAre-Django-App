@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Edit</title>
+</head>
+<body class="">
+  {% include 'base/navbar.html' %}
+
+  <div class="m-10">
+
+    <form action="" method="POST" class="font-medium flex flex-col items-center" >
+
+      {% csrf_token %}
+      <div class="w-[50%] flex flex-col  items-center gap-10">
+
+        <div class=" inline">
+            <h1 class="font-mono mb-3">Title</h1>
+            {{form.title}}
+        </div>
+        <div class="inline">
+          <h1 class="font-mono mb-3">Target Date</h1>
+          {{form.targetDate}}
+        </div>
+        <div class="inline">
+          <h1 class="font-mono mb-3">Description</h1>
+          {{form.description}}
+        </div>
+      </div>
+      <button type="submit" class="my-10 px-10 py-3 rounded-full bg-black text-white">Update Task</button>
+
+    </form>
+  </div>
+  
+</body>
+</html>

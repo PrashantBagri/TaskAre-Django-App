@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    {% include 'base/navbar.html' %}
+
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h1>Do you really want to delete this task?</h1>
+        <button class="bg-black text-white px-10 py-3 rounded-full">Delete Task</button>
+        <a href="{{request.META.HTTP_REFERER}}">Go back</a>
+    </form>
+    
+</body>
+</html>
